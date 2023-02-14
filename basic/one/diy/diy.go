@@ -29,7 +29,7 @@ func (diy Diy) set(a int64, b float64) {
 }
 
 /** 
-4，函数
+TODO:，函数
 变量逃逸
 值传递和引用传递
 **/

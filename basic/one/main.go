@@ -7,12 +7,12 @@ import (
 )
 
 /**
-1,包管理：go mod init， 然后通过import导入package diy
+TODO:,包管理：go mod init， 然后通过import导入package diy
 只能通过main函数提供程序入口
 **/
 
 /**
-2,Golang语言可以先声明变量，再赋值，也可以直接创建一个带值的变量。如：
+TODO:,Golang语言可以先声明变量，再赋值，也可以直接创建一个带值的变量。如：
 **/
 // 声明并初始化三个值
 var i, j, k = 1, 2, 3
@@ -30,7 +30,7 @@ func main() {
 	// 直接赋值，创建一个新的变量
 	// j := 5
 
-	//3, 定义基本数据类型
+	//TODO:, 定义基本数据类型
 	p := true                             // bool
 	a := 3                                // int
 	b := 6.0                              // float64

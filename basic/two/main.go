@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 	a := 1
-	// 判断语句
+	//TODO:, 判断语句
 	if a > 0 {
 		fmt.Println("a>0")
 	} else if a== 0 {
@@ -13,7 +13,7 @@ func main() {
 		fmt.Println("a<0")
 	}
 
-	// 如果有过多的else if 建议使用switch case
+	//TODO: 如果有过多的else if 建议使用switch case
 	num := 4
 
     switch num {
@@ -27,7 +27,7 @@ func main() {
         fmt.Println("not found")
 	}
 
-	// 循环语句, golang只有for 循环
+	//TODO: 循环语句, golang只有for 循环
 	// for 起始状态; 进入循环需满足的条件; 每次循环后执行的指令 {}
     for i := 9; i <= 10; i++ {
         fmt.Printf("i=%d\n", i)
