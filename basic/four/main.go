@@ -6,7 +6,7 @@ import (
 )
 
 /**
-接口结构interface, 同样可以用断言和反射判断
+TODO: 接口结构interface, 同样可以用断言和反射判断
 **/
 // A 定义一个接口，有一个方法
 type A interface {
@@ -89,7 +89,7 @@ func main() {
 }
 
 /**
-数据类型interface{}, 现在可用any代替
+TODO: 数据类型interface{}, 现在可用any代替
 **/
 func test() {
 	// 声明一个未知类型的 a，表明不知道是什么类型

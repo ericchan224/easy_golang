@@ -8,7 +8,7 @@ import (
 
 /*
 *
-协程
+TODO: 协程
 *
 */
 func Hu() {
@@ -36,7 +36,7 @@ func main() {
 
 /*
 *
-信道
+TODO: 信道
 *
 */
 func Hu2(ch chan int) {
@@ -119,7 +119,7 @@ func test3() {
 
 /*
 *
-锁实现并发安全
+TODO: 锁实现并发安全
 *
 */
 type Money struct {
