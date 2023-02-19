@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"sync"
 	"time"
 )
@@ -24,6 +25,10 @@ func main() {
 
 	// 开启新的协程，不会堵塞
 	go Hu()
+
+	go func() {
+		log.Println("aaa")
+	}()
 
 	fmt.Println("start hu, wait...")
 

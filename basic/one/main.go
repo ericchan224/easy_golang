@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/chenchen224/easy_golang/basic/one/diy"
 )
@@ -21,6 +22,11 @@ var i, j, k = 1, 2, 3
 const s = 2
 
 func main() {
+	var aa = 1
+	bb := 3
+	diy.Sum(&aa, &bb)
+	log.Println("", aa)
+
 	_ = diy.Diy{}
 
 	// 声明后再赋值
@@ -45,6 +51,8 @@ func main() {
 	fmt.Printf("type:%T:%v\n", d, d)
 	fmt.Printf("type:%T:%v\n", e, e)
 	// 切片如何切
+	e1 := e[:1]
+	e1[0] = 0
 	fmt.Printf("type:%T:%v\n", e, e[:1])
 	fmt.Printf("type:%T:%v\n", e, e[1:])
 	fmt.Printf("type:%T:%v\n", e, e[:])
