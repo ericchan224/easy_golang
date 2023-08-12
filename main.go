@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"io"
+	"log"
 )
 
 // Sayer 接口
@@ -36,16 +36,8 @@ func (d dog) move() {
 }
 
 func main() {
-	var _ io.Writer
-	var x Sayer
-	var y Mover
-	var z animal
-
-	var a = dog{name: "旺财"}
-	x = a
-	y = a
-	z = a
-	x.say()
-	y.move()
-	z.move()
+	a := []int{1}
+	_ = a[0]
+	ar := a[1:]
+	log.Println("", ar)
 }
