@@ -6,7 +6,7 @@ import "fmt"
 func QuickSort(array []int, begin, end int) {
 	if begin < end {
 		// 进行切分
-		loc := partition(array, begin, end)
+		loc := TwoPointQuikcSort(array, begin, end)
 		// 对左部分进行快排
 		QuickSort(array, begin, loc-1)
 		// 对右部分进行快排
@@ -41,6 +41,32 @@ func partition(array []int, begin, end int) int {
 
 	array[begin], array[i] = array[i], array[begin]
 	return i
+}
+
+func TwoPointQuikcSort(arr []int, left, right int) int {
+	pivot := arr[left]
+	lt, gt := left + 1, right
+
+	for {
+		for lt <= right && arr[lt] < pivot {
+			lt++
+		}
+
+		for gt > left && arr[gt] > pivot {
+			gt--
+		}
+
+		if lt >= gt {
+			break
+		}
+
+		arr[lt], arr[gt] = arr[gt], arr[lt]
+		lt++
+		gt--
+	}
+
+	arr[gt], arr[left] = arr[left], arr[gt]
+	return gt
 }
 
 func main() {
