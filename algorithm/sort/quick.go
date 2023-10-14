@@ -2,16 +2,20 @@ package sort
 
 import "fmt"
 
+const INSERTION_SORT_THRESHOLD = 7
+
 // QuickSort 普通快速排序
 func QuickSort(array []int, begin, end int) {
-	if begin < end {
-		// 进行切分
-		loc := TwoPointQuikcSort(array, begin, end)
-		// 对左部分进行快排
-		QuickSort(array, begin, loc-1)
-		// 对右部分进行快排
-		QuickSort(array, loc+1, end)
+	if end-begin < INSERTION_SORT_THRESHOLD {
+		InsertionSort(array, begin, end)
+		return
 	}
+	// 进行切分
+	loc := TwoPointPartition(array, begin, end)
+	// 对左部分进行快排
+	QuickSort(array, begin, loc-1)
+	// 对右部分进行快排
+	QuickSort(array, loc+1, end)
 }
 
 // 切分函数，并返回切分元素的下标
@@ -43,9 +47,9 @@ func partition(array []int, begin, end int) int {
 	return i
 }
 
-func TwoPointQuikcSort(arr []int, left, right int) int {
+func TwoPointPartition(arr []int, left, right int) int {
 	pivot := arr[left]
-	lt, gt := left + 1, right
+	lt, gt := left+1, right
 
 	for {
 		for lt <= right && arr[lt] < pivot {
@@ -67,6 +71,37 @@ func TwoPointQuikcSort(arr []int, left, right int) int {
 
 	arr[gt], arr[left] = arr[left], arr[gt]
 	return gt
+}
+
+func ThreePointQuickSort(arr []int, left, right int) {
+	if right-left < INSERTION_SORT_THRESHOLD {
+		InsertionSort(arr, left, right)
+		return
+	}
+
+	pivot := arr[left]
+
+	lt := left
+	gt := right + 1
+	i := left + 1
+
+	for i < gt {
+		if arr[i] < pivot {
+			lt++
+			arr[i], arr[lt] = arr[lt], arr[i]
+			i++
+		} else if arr[i] == pivot {
+			i++
+		} else {
+			gt--
+			arr[i], arr[gt] = arr[gt], arr[i]
+		}
+	}
+
+	arr[lt], arr[left] = arr[left], arr[lt]
+
+	ThreePointQuickSort(arr, left, lt-1)
+	ThreePointQuickSort(arr, gt, right)
 }
 
 func main() {

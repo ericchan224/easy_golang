@@ -27,3 +27,16 @@ func InsertSortOfficial(arr []int) []int {
 	}
 	return arr
 }
+
+func InsertionSort(arr []int, left, right int) {
+	for i := left + 1; i <= right; i++ {
+		deal := arr[i]
+		j := i - 1
+		if deal < arr[j] {
+			for ; j >= left && deal < arr[j]; j-- {
+				arr[j + 1] = arr[j]
+			}
+			arr[j + 1] = deal
+		}
+	}
+}
